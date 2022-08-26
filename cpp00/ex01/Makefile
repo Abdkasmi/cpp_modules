@@ -10,3 +10,30 @@
 #                                                                              #
 # **************************************************************************** #
 
+SRCS = main.cpp\
+	Contact.cpp\
+	PhoneBook.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+NAME = phonebook
+
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+
+all : $(NAME)
+
+%.o : %.cpp
+		c++ $(CPPFLAGS) -c $(SRCS) -o $(NAME)
+
+$(NAME) : $(OBJS)
+		c++ $(OBJS) -o $(NAME)
+
+clean :
+		rm -rf $(OBJS)
+
+fclean : clean
+		rm -rf $(NAME)
+
+re : fclean all
+
+.PHONY : all clean fclean re
