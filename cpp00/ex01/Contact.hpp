@@ -13,6 +13,8 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# include <string>
+
 class Contact {
 
 public:
@@ -20,6 +22,11 @@ public:
 	Contact(void);
 	~Contact(void);
 
+	std::string f_name;
+	std::string l_name;
+	std::string n_name;
+	std::string phone_num;
+	std::string secret;
 };
 
 #endif

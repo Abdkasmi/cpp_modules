@@ -21,7 +21,7 @@ CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 all : $(NAME)
 
 %.o:	%.cpp
-			c++ ${CPPFLAGS} -c ${SRCS} -o ${OBJS}
+			c++ ${CPPFLAGS} -c ${SRCS}
 
 $(NAME) : $(OBJS)
 			c++ $(OBJS) -o $(NAME)

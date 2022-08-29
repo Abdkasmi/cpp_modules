@@ -12,3 +12,15 @@
 
 #include <iostream>
 #include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook(void)
+{
+	std::cout << "PhoneBook constructor called" << std::endl;
+	return ;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	std::cout << "PhoneBook destrcutor called" << std::endl;
+	return ;
+}
