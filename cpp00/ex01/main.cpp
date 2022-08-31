@@ -59,10 +59,11 @@ static void	set_tab(void)
 int main(void)
 {
 	std::string	action;
+	std::string name;
+	std::string	contact_num;
 	PhoneBook	phonebook;
 	int			i;
 	int			nb_contacts = 0;
-	std::string	contact_num;
 	int			contact;
 
 	std::cout << "Hey welcome in my awesome phonebook !" << std::endl;
@@ -78,16 +79,20 @@ int main(void)
 		if (action.compare("ADD") == 0)
 		{
 			std::cout << "First name : ";
-			std::cin >> phonebook.contact[nb_contacts % 8].f_name;
+			std::cin >> name;
+			phonebook.setFirstname(nb_contacts % 8, name);
 			std::cout << "Last name : ";
-			std::cin >> phonebook.contact[nb_contacts % 8].l_name;
+			std::cin >> name;
+			phonebook.setLastname(nb_contacts % 8, name);
 			std::cout << "Nickname : ";
-			std::cin >> phonebook.contact[nb_contacts % 8].n_name;
+			std::cin >> name;
+			phonebook.setNickname(nb_contacts % 8, name);
 			std::cout << "phone number : ";
-			std::cin >> phonebook.contact[nb_contacts % 8].phone_num;
+			std::cin >> name;
+			phonebook.setPhonenum(nb_contacts % 8, name);
 			std::cout << "Darkest secret : ";
-			std::cin >> phonebook.contact[nb_contacts % 8].secret;
-			std::cout << phonebook.contact[nb_contacts % 8].n_name << " has been added to your contact list!" << std::endl; 
+			std::cin >> name;
+			phonebook.setSecret(nb_contacts % 8, name);
 			nb_contacts++;
 		}
 		else if (action.compare("SEARCH") == 0)
@@ -101,9 +106,9 @@ int main(void)
 				while (i < nb_contacts && i < 8)
 				{
 					std::cout << std::setw(9) << i + 1 << " | ";
-					std::cout << std::setw(10) << truncate(phonebook.contact[i].f_name) << " | ";
-					std::cout << std::setw(10) << truncate(phonebook.contact[i].l_name) << " | ";
-					std::cout << std::setw(10) << truncate(phonebook.contact[i].n_name) << std::endl;
+					std::cout << std::setw(10) << truncate(phonebook.getContact(i).getFirstname()) << " | ";
+					std::cout << std::setw(10) << truncate(phonebook.getContact(i).getLastname()) << " | ";
+					std::cout << std::setw(10) << truncate(phonebook.getContact(i).getNickname()) << std::endl;
 					i++;
 				}
 				std::cout << "Which contact do you wnat to look at :";
@@ -122,11 +127,11 @@ int main(void)
 						if (contact > 0 && contact <= nb_contacts && contact < 9)
 						{
 							std::cout << "	Index : " << contact << std::endl;
-							std::cout << "	First name : " << truncate(phonebook.contact[contact - 1].f_name) << std::endl;
-							std::cout << "	Last name : " << truncate(phonebook.contact[contact - 1].l_name) << std::endl;
-							std::cout << "	Nickname : " << truncate(phonebook.contact[contact - 1].n_name) <<  std::endl;
-							std::cout << "	Phone number : " << truncate(phonebook.contact[contact - 1].phone_num) <<  std::endl;
-							std::cout << "	Darkest Secret : " << truncate(phonebook.contact[contact - 1].secret) << std::endl;
+							std::cout << "	First name : " << truncate(phonebook.getContact(contact - 1).getFirstname()) << std::endl;
+							std::cout << "	Last name : " << truncate(phonebook.getContact(contact - 1).getLastname()) << std::endl;
+							std::cout << "	Nickname : " << truncate(phonebook.getContact(contact - 1).getNickname()) <<  std::endl;
+							std::cout << "	Phone number : " << truncate(phonebook.getContact(contact - 1).getPhonenum()) <<  std::endl;
+							std::cout << "	Darkest Secret : " << truncate(phonebook.getContact(contact - 1).getSecret()) << std::endl;
 							break ;
 						}
 						else

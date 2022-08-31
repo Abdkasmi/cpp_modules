@@ -15,12 +15,45 @@
 
 PhoneBook::PhoneBook(void)
 {
-	std::cout << "PhoneBook constructor called" << std::endl;
 	return ;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "PhoneBook destrcutor called" << std::endl;
+	return ;
+}
+
+Contact PhoneBook::getContact(int pos) const
+{
+	return (this->contact[pos]);
+}
+
+void	PhoneBook::setFirstname(int pos, std::string name)
+{
+	this->contact[pos].setFirstname(name);
+	return ;
+}
+
+void	PhoneBook::setLastname(int pos, std::string name)
+{
+	this->contact[pos].setLastname(name);
+	return ;
+}
+
+void	PhoneBook::setNickname(int pos, std::string name)
+{
+	this->contact[pos].setNickname(name);
+	return ;
+}
+
+void	PhoneBook::setPhonenum(int pos, std::string name)
+{
+	this->contact[pos].setPhonenum(name);
+	return ;
+}
+
+void	PhoneBook::setSecret(int pos, std::string name)
+{
+	this->contact[pos].setSecret(name);
 	return ;
 }

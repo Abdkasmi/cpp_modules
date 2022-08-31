@@ -22,11 +22,25 @@ public:
 	Contact(void);
 	~Contact(void);
 
-	std::string f_name;
-	std::string l_name;
-	std::string n_name;
-	std::string phone_num;
-	std::string secret;
+	void	setFirstname(std::string name);
+	void	setLastname(std::string name);
+	void	setNickname(std::string name);
+	void	setPhonenum(std::string num);
+	void	setSecret(std::string secret);
+
+	std::string	getFirstname(void) const;
+	std::string	getLastname(void) const;
+	std::string	getNickname(void) const;
+	std::string	getPhonenum(void) const;
+	std::string	getSecret(void) const;
+
+private:
+
+	std::string _f_name;
+	std::string _l_name;
+	std::string _n_name;
+	std::string _phone_num;
+	std::string _secret;
 };
 
 #endif
