@@ -68,30 +68,30 @@ int main(void)
 
 	std::cout << "Hey welcome in my awesome phonebook !" << std::endl;
 	instructions();
-	std::cin >> action;
+	std::getline(std::cin, action);
 	while (action.compare("EXIT") != 0)
 	{
 		if (action.compare("ADD") != 0 && action.compare("SEARCH") != 0 && action.compare("EXIT") != 0)
 		{
 			instructions();
-			std::cin >> action;
+			std::getline(std::cin, action);
 		}
 		if (action.compare("ADD") == 0)
 		{
 			std::cout << "First name : ";
-			std::cin >> name;
+			std::getline(std::cin, name);
 			phonebook.setFirstname(nb_contacts % 8, name);
 			std::cout << "Last name : ";
-			std::cin >> name;
+			std::getline(std::cin, name);
 			phonebook.setLastname(nb_contacts % 8, name);
 			std::cout << "Nickname : ";
-			std::cin >> name;
+			std::getline(std::cin, name);
 			phonebook.setNickname(nb_contacts % 8, name);
 			std::cout << "phone number : ";
-			std::cin >> name;
+			std::getline(std::cin, name);
 			phonebook.setPhonenum(nb_contacts % 8, name);
 			std::cout << "Darkest secret : ";
-			std::cin >> name;
+			std::getline(std::cin, name);
 			phonebook.setSecret(nb_contacts % 8, name);
 			nb_contacts++;
 		}
@@ -112,14 +112,14 @@ int main(void)
 					i++;
 				}
 				std::cout << "Which contact do you wnat to look at :";
-				std::cin >> contact_num;
+				std::getline(std::cin, contact_num);
 				while (1)
 				{
 					if (check_str(contact_num))
 					{
 						std::cout << "Please enter a valid information !" << std::endl;
 						std::cout << "Which contact do you wnat to look at : ";
-						std::cin >> contact_num;
+						std::getline(std::cin, contact_num);
 					}
 					else
 					{
@@ -127,25 +127,25 @@ int main(void)
 						if (contact > 0 && contact <= nb_contacts && contact < 9)
 						{
 							std::cout << "	Index : " << contact << std::endl;
-							std::cout << "	First name : " << truncate(phonebook.getContact(contact - 1).getFirstname()) << std::endl;
-							std::cout << "	Last name : " << truncate(phonebook.getContact(contact - 1).getLastname()) << std::endl;
-							std::cout << "	Nickname : " << truncate(phonebook.getContact(contact - 1).getNickname()) <<  std::endl;
-							std::cout << "	Phone number : " << truncate(phonebook.getContact(contact - 1).getPhonenum()) <<  std::endl;
-							std::cout << "	Darkest Secret : " << truncate(phonebook.getContact(contact - 1).getSecret()) << std::endl;
+							std::cout << "	First name : " << phonebook.getContact(contact - 1).getFirstname() << std::endl;
+							std::cout << "	Last name : " << phonebook.getContact(contact - 1).getLastname() << std::endl;
+							std::cout << "	Nickname : " << phonebook.getContact(contact - 1).getNickname() <<  std::endl;
+							std::cout << "	Phone number : " << phonebook.getContact(contact - 1).getPhonenum() <<  std::endl;
+							std::cout << "	Darkest Secret : " << phonebook.getContact(contact - 1).getSecret() << std::endl;
 							break ;
 						}
 						else
 						{
 							std::cout << "Please enter a valid information !" << std::endl;
 							std::cout << "Which contact do you wnat to look at : ";
-							std::cin >> contact_num;
+							std::getline(std::cin, contact_num);
 						}
 					}
 				}
 			}
 		}
 		instructions();
-		std::cin >> action;
+		std::getline(std::cin, action);
 	}
 	return (0);
 }
