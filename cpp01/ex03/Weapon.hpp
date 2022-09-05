@@ -14,22 +14,21 @@
 
 #include <string>
 #include <iostream>
-#include "HumanA.hpp"
-#include "HumanB.hpp"
 
-class Weapon {
+class Weapon{
 
 public:
 
 	Weapon(std::string type);
+	Weapon();
 	~Weapon();
 
-	Weapon	getType(void) const;
-	void	setType(std::string type);
+	std::string	getType(void) const;
+	void		setType(std::string type);
 
 private:
 
 	std::string	_type;
 
-} ;
+};
 

@@ -11,11 +11,10 @@
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
+#include "Weapon.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon): _weapon(weapon), _name(name)
 {
-	this->_name = name;
-	this->_weapon = weapon;
 	return ;
 }
 
@@ -24,8 +23,13 @@ HumanA::~HumanA()
 	return ;
 }
 
-void	HumanA::attack(void) const
+Weapon	&HumanA::getWeapon(void)
 {
-	std::cout << this->_name << "attack with their " << this->_weapon << std::endl;
+	return (this->_weapon);
+}
+
+void	HumanA::attack(void)
+{
+	std::cout << this->_name << " attack with their " << this->getWeapon().getType() << std::endl;
 	return ;
 }

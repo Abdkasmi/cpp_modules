@@ -48,13 +48,5 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	if (level.compare("DEBUG"))
-		debug();
-	else if (level.compare("INFO"))
-		info();
-	else if (level.compare("WARNING"))
-		warning();
-	else if (level.compare("ERROR"))
-		error();
-	return ;
+
 }

@@ -17,20 +17,20 @@
 int main(void)
 {
 	{
-		Weapon club = Weapon("crude spiked club");
+		Weapon club = Weapon("9 mm");
 		
 		HumanA bob("Bob", club);
 		bob.attack();
-		club.setType("some other type of club");
+		club.setType("ak-47");
 		bob.attack();
 	}
 	{
-		Weapon club = Weapon("crude spiked club");
+		Weapon club = Weapon("desert eagle");
 		
 		HumanB jim("Jim");
 		jim.setWeapon(club);
 		jim.attack();
-		club.setType("some other type of club");
+		club.setType("m4a1-s");
 		jim.attack();
 	}
 
