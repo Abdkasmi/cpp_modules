@@ -23,9 +23,9 @@ private:
 
 public:
 
-	HumanA();
+	HumanA(std::string name, Weapon weapon);
 	~HumanA();
 	
-	void	attack(void);
+	void	attack(void) const;
 
 };

@@ -12,8 +12,10 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA()
+HumanA::HumanA(std::string name, Weapon weapon)
 {
+	this->_name = name;
+	this->_weapon = weapon;
 	return ;
 }
 
@@ -22,7 +24,7 @@ HumanA::~HumanA()
 	return ;
 }
 
-void	HumanA::attack(void)
+void	HumanA::attack(void) const
 {
 	std::cout << this->_name << "attack with their " << this->_weapon << std::endl;
 	return ;

@@ -5,19 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: abkasmi <abkasmi@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/01 19:10:35 by abkasmi           #+#    #+#              #
-#    Updated: 2022/09/01 19:10:35 by abkasmi          ###   ########.fr        #
+#    Created: 2022/09/02 11:16:03 by abkasmi           #+#    #+#              #
+#    Updated: 2022/09/02 11:16:03 by abkasmi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.cpp\
-	Weapon.cpp\
-	HumanA.cpp\
-	HumanB.cpp
+	Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = fight
+NAME = harl
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 

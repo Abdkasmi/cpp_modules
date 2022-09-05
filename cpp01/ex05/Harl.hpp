@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abkasmi <abkasmi@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 19:11:17 by abkasmi           #+#    #+#             */
-/*   Updated: 2022/09/01 19:11:17 by abkasmi          ###   ########.fr       */
+/*   Created: 2022/09/02 11:16:42 by abkasmi           #+#    #+#             */
+/*   Updated: 2022/09/02 11:16:42 by abkasmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
-class HumanB {
+class Harl {
 
 private:
 
-	Weapon		_weapon;
-	std::string	_name;
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 
 public:
 
-	HumanB(std::string name);
-	~HumanB();
+	Harl();
+	~Harl();
 
-	void	attack(void);
-	void	setWeapon(Weapon weapon);
+	void	complain(std::string level);
+
 };
