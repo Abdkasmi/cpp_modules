@@ -80,22 +80,33 @@ int main(void)
 		{
 			std::cout << "First name : ";
 			std::getline(std::cin, name);
+			if (name.compare("") == 0)
+				goto jump;
 			phonebook.setFirstname(nb_contacts % 8, name);
 			std::cout << "Last name : ";
 			std::getline(std::cin, name);
+			if (name.compare("") == 0)
+				goto jump;
 			phonebook.setLastname(nb_contacts % 8, name);
 			std::cout << "Nickname : ";
 			std::getline(std::cin, name);
+			if (name.compare("") == 0)
+				goto jump;
 			phonebook.setNickname(nb_contacts % 8, name);
 			std::cout << "phone number : ";
 			std::getline(std::cin, name);
+			if (name.compare("") == 0)
+				goto jump;
 			phonebook.setPhonenum(nb_contacts % 8, name);
 			std::cout << "Darkest secret : ";
 			std::getline(std::cin, name);
+			if (name.compare("") == 0)
+				goto jump;
 			phonebook.setSecret(nb_contacts % 8, name);
 			nb_contacts++;
 		}
-		else if (action.compare("SEARCH") == 0)
+		jump:
+		if (action.compare("SEARCH") == 0)
 		{
 			if (nb_contacts == 0)
 				std::cout << "There is no contact to list. Please add at least one contact before searching." << std::endl;
@@ -123,7 +134,8 @@ int main(void)
 					}
 					else
 					{
-						contact = std::stoi(contact_num, 0, 10);
+						if (contact)	
+							contact = std::stoi(contact_num, 0, 10);
 						if (contact > 0 && contact <= nb_contacts && contact < 9)
 						{
 							std::cout << "	Index : " << contact << std::endl;
