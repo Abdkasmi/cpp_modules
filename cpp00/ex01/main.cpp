@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <iomanip>
 #include <cstring>
 #include <cctype>
@@ -25,6 +26,13 @@ static void	instructions(void)
 	std::cout << "Type EXIT to exit the phonebook:" << std::endl;
 	
 	return ;
+}
+
+static int ft_stoi( std::string &s )
+{
+    int i;
+    std::istringstream(s) >> i;
+    return i;
 }
 
 static std::string	truncate(std::string str)
@@ -134,8 +142,7 @@ int main(void)
 					}
 					else
 					{
-						if (contact)	
-							contact = std::stoi(contact_num, 0, 10);
+						contact = ft_stoi(contact_num);
 						if (contact > 0 && contact <= nb_contacts && contact < 9)
 						{
 							std::cout << "	Index : " << contact << std::endl;
