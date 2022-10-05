@@ -6,7 +6,7 @@
 /*   By: abkasmi <abkasmi@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:05:40 by abkasmi           #+#    #+#             */
-/*   Updated: 2022/09/01 19:08:51 by abkasmi          ###   ########.fr       */
+/*   Updated: 2022/10/05 14:29:57 by abkasmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void)
 
 	std::cout << "Memory address" << std::endl << std::endl;
 	std::cout << "str : " << &str << std::endl;
-	std::cout << "ptr_str : " << &*ptr_str << std::endl;
+	std::cout << "ptr_str : " << ptr_str << std::endl;
 	std::cout << "ref_str : " << &ref_str << std::endl << std::endl;
 	std::cout << "Value" << std::endl << std::endl;
 	std::cout << "str : " << str << std::endl;

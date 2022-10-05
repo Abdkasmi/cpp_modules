@@ -6,7 +6,7 @@
 /*   By: abkasmi <abkasmi@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 19:11:14 by abkasmi           #+#    #+#             */
-/*   Updated: 2022/09/01 19:11:14 by abkasmi          ###   ########.fr       */
+/*   Updated: 2022/10/05 14:32:07 by abkasmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 HumanB::HumanB(std::string name): _name(name)
 {
-	this->_weapon = nullptr;
+	this->_weapon = NULL;
 	return ;
 }
 
