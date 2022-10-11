@@ -12,7 +12,7 @@ int main( void )
 	std::cout << "P1 " << (bsp(a, b, c ,p) ? "is in triangle" : "is not in triangle") << std::endl; // yes
 	std::cout << "P2 " << (bsp(a, b, c ,a) ? "is in triangle" : "is not in triangle") << std::endl;	// no 
 	std::cout << "P3 " << (bsp(a, b, c ,r) ? "is in triangle" : "is not in triangle") << std::endl; // no
-	std::cout << "P4 " << (bsp(a, b, c ,f) ? "is in triangle" : "is not in triangle") << std::endl; // yes
+	std::cout << "P4 " << (bsp(a, b, c ,f) ? "is in triangle" : "is not in triangle") << std::endl; // yes 
 
 	return ;
 }
