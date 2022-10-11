@@ -12,9 +12,8 @@ Point::Point(float const f_x, float const f_y): _x(f_x), _y(f_y)
 	return ;
 }
 
-Point::Point(Point const & src)
+Point::Point(Point const & src): _x(src._x), _y(src._y)
 {
-	*this = src;
 	return ;
 }
 
