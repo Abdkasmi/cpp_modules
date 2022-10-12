@@ -2,10 +2,15 @@
 
 // Constructors 
 
-ClapTrap::ClapTrap(): _hit_points(10), _energy_points(10), _attack_dammage(0)
+ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called !" << std::endl;
 	return ;
+}
+
+ClapTrap::ClapTrap(std::string name): _name(name), _hit_points(100), _energy_points(50), _attack_dammage(20)
+{
+	std::cout << name << " constructor called !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int damage): _name(name), _hit_points(hit_points), _energy_points(energy_points), _attack_dammage(damage)

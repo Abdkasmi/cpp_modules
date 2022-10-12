@@ -1,10 +1,11 @@
 SRCS = main.cpp\
 	ClapTrap.cpp\
-	ScavTrap.cpp
+	ScavTrap.cpp\
+	FragTrap.cpp
 	
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = scavtrap
+NAME = fragtrap
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
