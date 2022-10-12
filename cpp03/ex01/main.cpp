@@ -16,7 +16,6 @@ int main()
 	clap1.beRepaired(50);
 	clap1.attack("Sigma");
 	clap1.takeDamage(150);
-	std::cout << "Clap1 died." << std::endl;
 	clap1.attack("Sigma");
 	clap1.beRepaired(50);
 
