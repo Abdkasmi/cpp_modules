@@ -15,6 +15,7 @@ private:
 public:
 
 	ClapTrap();
+	ClapTrap(std::string name);
 	ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int damage);
 	ClapTrap(ClapTrap const & src);
 	~ClapTrap();

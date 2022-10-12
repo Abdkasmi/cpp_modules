@@ -4,7 +4,7 @@ SRCS = main.cpp\
 	
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = claptrap
+NAME = scavtrap
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
