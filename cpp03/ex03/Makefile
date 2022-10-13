@@ -8,7 +8,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 NAME = diamondtrap
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 %.o:	%.cpp
 	c++ $(CPPFLAGS) -c $(SRCS)
