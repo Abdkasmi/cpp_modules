@@ -1,8 +1,8 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(): FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(): ClapTrap("_clap_name"), FragTrap(), ScavTrap()
 {
-	this->_name = "_clap_name";
+	this->_name = "";
 	this->_hit_points = FragTrap::_hit_points;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_dammage = FragTrap::_attack_dammage;
@@ -10,9 +10,10 @@ DiamondTrap::DiamondTrap(): FragTrap(), ScavTrap()
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name): FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(std::string name)
 {
-	this->_name = name + "_clap_name";
+	ClapTrap::_name = name + "_clap_name";
+	this->_name = name;
 	this->_hit_points = FragTrap::_hit_points;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_attack_dammage = FragTrap::_attack_dammage;

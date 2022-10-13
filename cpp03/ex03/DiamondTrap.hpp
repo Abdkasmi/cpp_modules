@@ -18,6 +18,8 @@ public:
 	~DiamondTrap();
 	DiamondTrap&	operator=(DiamondTrap const & rhs);
 
+	unsigned int	getHitPoint(void);
+
 	void	attack(const std::string & target);
 
 	void	whoAmI(void);
