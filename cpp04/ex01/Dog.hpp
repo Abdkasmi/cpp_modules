@@ -2,8 +2,13 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal {
+class Dog : public Animal, public Brain {
+
+private: 
+
+	Brain	*brain_dog;
 
 public:
 

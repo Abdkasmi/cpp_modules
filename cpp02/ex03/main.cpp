@@ -14,5 +14,5 @@ int main( void )
 	std::cout << "P3 " << (bsp(a, b, c ,r) ? "is in triangle" : "is not in triangle") << std::endl; // no
 	std::cout << "P4 " << (bsp(a, b, c ,f) ? "is in triangle" : "is not in triangle") << std::endl; // yes 
 
-	return ;
+	return 0;
 }

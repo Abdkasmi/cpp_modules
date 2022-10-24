@@ -109,7 +109,7 @@ Fixed	Fixed::operator*(Fixed const & rhs) const
 {
 	Fixed	n;
 
-	n.setRawBits(this->_value * (rhs.getRawBits() / 256));
+	n.setRawBits(this->_value * rhs.toFloat());
 	return (n);
 }
 
@@ -117,7 +117,7 @@ Fixed	Fixed::operator/(Fixed const & rhs) const
 {
 	Fixed	n;
 
-	n.setRawBits(this->_value / (rhs.getRawBits() / 256));
+	n.setRawBits(this->_value / rhs.toFloat());
 	return (n);
 }
 
