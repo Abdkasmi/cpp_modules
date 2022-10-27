@@ -18,5 +18,6 @@ public:
 	~Dog();
 
 	virtual void		makeSound(void) const;
+	std::string	getType(void) const;
 
 };
