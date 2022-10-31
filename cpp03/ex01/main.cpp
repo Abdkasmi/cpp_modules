@@ -22,14 +22,14 @@ int main()
 	std::cout << std::endl << "----- Clap2 test ----- " << std::endl;
 	clap2.attack("Sigma");
 	clap2.takeDamage(50);
-	std::cout << "Clap energy = " << clap2.getEnergyPoints() << std::endl;
-	std::cout << "Clap health = " << clap2.getHitPoints() << std::endl;
+	std::cout << "ScavChad energy = " << clap2.getEnergyPoints() << std::endl;
+	std::cout << "ScavChad health = " << clap2.getHitPoints() << std::endl;
 	clap2.attack("Sigma");
 	clap2.beRepaired(50);
 	clap2.attack("Sigma");
 	clap2.guardGate();
 	clap2.takeDamage(150);
-	std::cout << "Clap2 died." << std::endl;
+	std::cout << "ScavChad died." << std::endl;
 	clap2.attack("Sigma");
 	clap2.beRepaired(50);
 	clap2.guardGate();

@@ -67,8 +67,8 @@ int main()
 	clap2.takeDamage(50);
 	clap3.takeDamage(50);
 	clap4.takeDamage(50);
-	std::cout << "Clap4 energy = " << clap4.getEnergyPoints() << std::endl;
-	std::cout << "Clap4 health = " << clap4.getHitPoints() << std::endl;
+	std::cout << "DiamondChad energy = " << clap4.getEnergyPoints() << std::endl;
+	std::cout << "DiamondChad health = " << clap4.getHitPoints() << std::endl;
 	
 	std::cout << std::endl;
 	clap1.beRepaired(50);
@@ -88,7 +88,7 @@ int main()
 	clap4.whoAmI();
 	std::cout << std::endl;
 	clap4.takeDamage(150);
-	std::cout << "Clap4 died." << std::endl;
+	std::cout << "DiamondChad died." << std::endl;
 	clap4.guardGate();
 	clap4.attack("Sigma");
 	std::cout << std::endl;

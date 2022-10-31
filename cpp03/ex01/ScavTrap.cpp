@@ -52,7 +52,6 @@ void	ScavTrap::attack(const std::string & target)
 		std::cout << "ScavTrap " << this->_name << " touched " << target << ", causing " << this->_attack_dammage << " damage!" << std::endl;
 		this->_energy_points--;
 	}
-	this->_energy_points--;
 	return ;
 }
 
