@@ -7,7 +7,7 @@ SRCS = main.cpp\
 	
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = form
+NAME = forms
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 

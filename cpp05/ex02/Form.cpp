@@ -1,73 +1,73 @@
 #include "Form.hpp"
 
-Form::Form(): _name("default"), _sign(0), _grade_sign(150), _grade_execute(150)
+AForm::AForm(): _name("default"), _sign(0), _grade_sign(150), _grade_execute(150)
 {
 	std::cout << "Form default constructor called" << std::endl;
 	return ;
 }
 
-Form::Form(std::string name, bool sign, int grade_sign, int grade_execute): _name(name), _sign(sign), _grade_sign(grade_sign), _grade_execute(grade_execute)
+AForm::AForm(std::string name, bool sign, int grade_sign, int grade_execute): _name(name), _sign(sign), _grade_sign(grade_sign), _grade_execute(grade_execute)
 {
 	std::cout << "Form default constructor called" << std::endl;
 	if (grade_sign < 1)
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	else if (grade_sign > 150)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	if (grade_execute < 1)
-		throw Form::GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	else if (grade_execute > 150)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 
-Form::Form(Form const & src): _grade_sign(src.getGradeSign()), _grade_execute(src.getGradeExecute())
+AForm::AForm(AForm const & src): _grade_sign(src.getGradeSign()), _grade_execute(src.getGradeExecute())
 {
 	std::cout << "Form copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
-Form&	Form::operator=(Form const & src)
+AForm&	AForm::operator=(AForm const & src)
 {
 	std::cout << "Form overload operator= called" << std::endl;
 	this->_sign = src.getSign();
 	return (*this);
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	std::cout << "Form destructor called" << std::endl;
 	return  ;
 }
 
-void	Form::beSigned(Bureaucrat& b)
+void	AForm::beSigned(Bureaucrat& b)
 {
 	if (b.getGrade() > this->_grade_sign)
-		throw Form::GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	else
 		this->_sign = 1;
 }
 
-std::string Form::getName(void) const
+std::string AForm::getName(void) const
 {
 	return (this->_name);
 }
 
-bool Form::getSign(void) const
+bool AForm::getSign(void) const
 {
 	return (this->_sign);
 }
 
-int Form::getGradeSign(void) const
+int AForm::getGradeSign(void) const
 {
 	return (this->_grade_sign);
 }
 
-int Form::getGradeExecute(void) const
+int AForm::getGradeExecute(void) const
 {
 	return (this->_grade_execute);
 }
 
-std::ostream& operator<<(std::ostream& o, Form const & rhs)
+std::ostream& operator<<(std::ostream& o, AForm const & rhs)
 {
 	o << "name : " << rhs.getName() << "; bool sign : " << rhs.getSign() << "; GradeSign : " << rhs.getGradeSign() << "; GradeExecute : " << rhs.getGradeExecute() << std::endl;
 	return o;

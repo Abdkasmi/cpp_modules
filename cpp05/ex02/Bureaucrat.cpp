@@ -75,7 +75,7 @@ void	Bureaucrat::gradeDowngrade(void)
 	}
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signForm(AForm& form)
 {
 	if (form.getSign() == 1)
 		std::cout << this->_name << " signed " << form.getName() << std::endl;
