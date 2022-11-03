@@ -18,6 +18,6 @@ class ShrubberyCreationForm : public AForm {
 
 		std::string getTarget(void) const;
 
-		void	to_do(std::string target) const;
+		void	to_do(const Bureaucrat& executor) const;
 
 };

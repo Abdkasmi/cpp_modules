@@ -1,13 +1,13 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(): _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("tree", 1, 14, 137), _target("default")
 {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("tree", 1, 14, 137), _target(target)
 {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 	return ;
@@ -37,8 +37,25 @@ std::string ShrubberyCreationForm::getTarget(void) const
 	return (this->_target);
 }
 
-void	ShrubberyCreationForm::to_do(std::string target) const
+void	ShrubberyCreationForm::to_do(Bureaucrat const & executor) const
 {
 	std::ofstream ofs;
-	ofs.c
+	std::string	tree[] = {
+		"       _-_",
+		"    /~~   ~~\\",
+		" /~~         ~~\\",
+		"{               }",
+		" \\  _-     -_  /",
+		"   ~  \\ //  ~",
+		"_- -   | | _- _",
+		"  _ -  | |   -_",
+		"      // \\"
+		};
+	this->AForm::execute(executor);
+	ofs.open((std::string)this->_target + "_shrubbery");
+	for (int i = 0; i <  9; i++)
+		ofs << tree[i] << std::endl;
+	ofs.close();
+	return ;
+
 }

@@ -21,8 +21,9 @@ public :
 	AForm & operator=(AForm const & rhs);
 	~AForm();
 
-	virtual void	beSigned(Bureaucrat& b) = 0;
-	void			execute(Bureaucrat const & executor) const;
+	void	beSigned(Bureaucrat& b);
+	void	execute(Bureaucrat const & executor) const;
+	virtual void	to_do(const Bureaucrat& executor) const = 0;
 
 	std::string getName(void) const;
 	bool		getSign(void) const;
@@ -49,6 +50,15 @@ public :
 			}
 	};
 
+	class FormNotSignedException: public std::exception {
+
+		public :
+
+			virtual const char * what() const throw()
+			{
+				return ("Grade Too Low");
+			}
+	};
 };
 
 std::ostream& operator<<(std::ostream& o, AForm const & rhs);
