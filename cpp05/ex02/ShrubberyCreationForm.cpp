@@ -1,13 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("tree", 1, 14, 137), _target("default")
-{
-	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
-	return ;
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("tree", 1, 14, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("tree", 0, 145, 137), _target(target)
 {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 	return ;

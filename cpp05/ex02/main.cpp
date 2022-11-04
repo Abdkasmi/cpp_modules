@@ -1,64 +1,52 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-int main(void)
+int main () 
 {
-	Bureaucrat	Manager("Bob", 3);
-	ShrubberyCreationForm	myForm("Form one");
-	//Form		myForm2("Form two", 0, 2, 1);
+	Bureaucrat Micheal("Micheal", 1);
+	Bureaucrat Jim("Jim", 72);
+	PresidentialPardonForm P_form("President");//LVL 25, 5
+	RobotomyRequestForm R_form("Zombie");//LVL 72, 45
+	ShrubberyCreationForm S_form("Tree_file");//LVL 145, 137
 
-	myForm.to_do(Manager);
-	// std::cout << std::endl;
+	std::cout << std::endl << " ---- Lvl Tests ---- " << std::endl;
+	try
+	{
+		Jim.executeForm(P_form);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		P_form.execute(Jim);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "Jim signs Form" << std::endl;
+	Jim.signForm(R_form);
+	try
+	{
+		Jim.executeForm(R_form);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
-	// std::cout << "-------- Test Getters --------" << std::endl;
-	// std::cout << "Name : " << myForm.getName() << std::endl;
-	// std::cout << "Sign : " << myForm.getSign() << std::endl;
-	// std::cout << "GradeSign : " << myForm.getGradeSign() << std::endl;
-	// std::cout << "GradeExecute : " << myForm.getGradeExecute() << std::endl;
-
-	// std::cout << std::endl;
-
-	// std::cout << "-------- Test with a GradeSign too high < 1 --------" << std::endl;
-	// try
-	// {
-	// 	Form John("John", 0, 0, 0);
-	// }
-	// catch (std::exception& e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	// std::cout << std::endl;
-	// std::cout << "-------- Test with a GradeSign too low > 150 --------" << std::endl;
-	// try
-	// {
-	// 	Form John("John", 0,151, 151);
-	// }
-	// catch(std::exception& e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	// std::cout << std::endl;
-	// std::cout << "-------- Test valid sign --------" << std::endl;
-	// try
-	// {
-	// 	myForm.beSigned(Manager);
-	// 	Manager.signForm(myForm);
-	// }
-	// catch (std::exception& e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	// std::cout << "-------- Test invalid sign--------" << std::endl;
-	// try
-	// {
-	// 	Manager.signForm(myForm2);
-	// 	myForm2.beSigned(Manager);
-	// 	Manager.signForm(myForm2);
-	// }
-	// catch (std::exception& e)
-	// {
-	// 	std::cerr << e.what() << std::endl;
-	// }
-	// std::cout << std::endl;
-	return 0;
+	std::cout << std::endl << " ---- Actions Tests ---- " << std::endl;
+	Micheal.signForm(P_form);
+	Micheal.signForm(R_form);
+	Micheal.signForm(S_form);
+	Micheal.executeForm(P_form);
+	Micheal.executeForm(R_form);
+	Micheal.executeForm(R_form);
+	Micheal.executeForm(R_form);
+	Micheal.executeForm(S_form);
+	std::cout << std::endl;	
 }

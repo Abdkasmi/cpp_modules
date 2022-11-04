@@ -23,7 +23,8 @@ public:
 	~Bureaucrat();
 
 	std::string getName(void) const;
-	int getGrade(void) const;
+	int 		getGrade(void) const;
+	void		executeForm(AForm const & form);
 
 	void	gradeUprgrade(void);
 	void	gradeDowngrade(void);
