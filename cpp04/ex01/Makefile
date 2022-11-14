@@ -6,7 +6,7 @@ SRCS = main.cpp\
 	
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = animal
+NAME = brain
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
