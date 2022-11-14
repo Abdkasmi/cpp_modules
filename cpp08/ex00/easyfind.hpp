@@ -1,8 +1,9 @@
 #pragma once
 
 #include <iostream>
+#include <algorithm>
 
-class NoOccurenceFound : public std::exception {
+class NoOccurrenceFound : public std::exception {
 
 	public :
 
@@ -11,7 +12,11 @@ class NoOccurenceFound : public std::exception {
 		}
 };
 
-template <typename T, int U>
-void	easyfind(T container, int num) {
-
+template <typename T>
+typename T::iterator	easyfind(T container, int num) {
+	typename T::iterator iter = std::find(container.begin(), container.end(), num);
+	if (iter != container.end())
+		return iter;
+	else
+		throw NoOccurrenceFound();
 }
