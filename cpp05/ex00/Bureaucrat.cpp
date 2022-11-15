@@ -60,7 +60,7 @@ void	Bureaucrat::gradeUprgrade(void)
 	else
 	{
 		this->_grade--;
-		std::cout << this->_name << " has successfully been upgrade to grade " << this->_grade << std::endl;
+		std::cout << this->_name << " has successfully been upgraded to grade " << this->_grade << std::endl;
 	}
 }
 
@@ -71,6 +71,6 @@ void	Bureaucrat::gradeDowngrade(void)
 	else
 	{
 		this->_grade++;
-		std::cout << this->_name << " has successfully been downgrade to grade " << this->_grade << std::endl;
+		std::cout << this->_name << " has successfully been downgraded to grade " << this->_grade << std::endl;
 	}
 }

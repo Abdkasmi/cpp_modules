@@ -10,6 +10,7 @@ int main(void)
 	std::cout << "-------- Test Getters --------" << std::endl;
 	std::cout << "Name : " << Manager.getName() << std::endl;
 	std::cout << "Grade : " << Manager.getGrade() << std::endl;
+	std::cout << Manager;
 
 	std::cout << std::endl;
 

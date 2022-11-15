@@ -13,6 +13,7 @@ int main(void)
 	std::cout << "Sign : " << myForm.getSign() << std::endl;
 	std::cout << "GradeSign : " << myForm.getGradeSign() << std::endl;
 	std::cout << "GradeExecute : " << myForm.getGradeExecute() << std::endl;
+	std::cout << myForm;
 
 	std::cout << std::endl;
 
