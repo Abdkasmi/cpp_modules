@@ -29,15 +29,15 @@ void	Span::addNumber(unsigned int number)
 	this->_vector.push_back(number);
 }
 
-unsigned int	Span::shortestSpan(void) const
+int	Span::shortestSpan(void) const
 {
 	if (this->_vector.size() <= 1)
 		throw NoDataException();
 	else
 	{
-		std::vector<unsigned int> v2 = this->_vector;
+		std::vector<int> v2 = this->_vector;
 		std::sort(v2.begin(), v2.end());
-		unsigned int tmp = v2.at(1) - v2.at(0);
+		int tmp = v2.at(1) - v2.at(0);
 		unsigned int size = v2.size();
 
 		for (unsigned int i = 1; i < size; i++)

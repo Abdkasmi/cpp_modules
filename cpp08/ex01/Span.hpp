@@ -9,7 +9,7 @@ class Span {
 	private :
 
 		unsigned int 				_n;
-		std::vector<unsigned int>	_vector;
+		std::vector<int>	_vector;
 
 	public :
 
@@ -19,14 +19,22 @@ class Span {
 		~Span();
 
 		void			addNumber(unsigned int n);
-		unsigned int	shortestSpan(void) const;
+		int	shortestSpan(void) const;
 		unsigned int	longestSpan(void) const;
+
+		template <typename Iterator>
+		void	superAddNumber(Iterator begin, Iterator end) {
+			if (this->_vector.size() + (end - begin) > this->_n)
+				throw TooMuchNumberException();
+			else
+				this->_vector.insert(this->_vector.end(), begin, end);
+		}
 
 		class TooMuchNumberException : public std::exception {
 
 				public :
 					virtual const char * what() const throw(){
-						return ("No space left to add a number");
+						return ("Too much numbers");
 					}
 		};
 		
