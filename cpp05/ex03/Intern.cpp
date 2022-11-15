@@ -40,12 +40,15 @@ AForm*	Intern::makeForm(std::string name, std::string target)
 	{
 		case 0:
 			form = new RobotomyRequestForm(target);
+			break ;
 		case 1:
 			form = new ShrubberyCreationForm(target);
+			break ;
 		case 2:
 			form = new PresidentialPardonForm(target);
+			break ;
 		default:
-			throw Intern::InvalidFormatException(); 
+			throw InvalidFormatException(); 
 	}
 	std::cout << "Intern creates " << name << std::endl;
 	return form;
