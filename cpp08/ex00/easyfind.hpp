@@ -3,20 +3,20 @@
 #include <iostream>
 #include <algorithm>
 
-class NoOccurrenceFound : public std::exception {
+class NoOccurrenceException : public std::exception {
 
 	public :
 
 		virtual const char* what() const throw() {
-			return ("There is no occurence Found");
+			return ("No occurence Found");
 		}
 };
 
 template <typename T>
 typename T::iterator	easyfind(T container, int num) {
 	typename T::iterator iter = std::find(container.begin(), container.end(), num);
-	if (iter != container.end())
-		return iter;
+	if (iter == container.end())
+		throw NoOccurrenceException();
 	else
-		throw NoOccurrenceFound();
+		return iter;
 }
