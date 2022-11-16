@@ -45,26 +45,14 @@ void	identify(Base &p)
 {
 	try
 	{
-		dynamic_cast<A &>(p);
-		std::cout << "Instance of A" << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		dynamic_cast<B &>(p);
-		std::cout << "Instance of B" << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	try
-	{
-		dynamic_cast<C &>(p);
-		std::cout << "Instance of C" << std::endl;
+		if (dynamic_cast<A *>(&p))
+			std::cout << "Instance of A" << std::endl;
+		else if (dynamic_cast<B *>(&p))
+			std::cout << "Instance of B" << std::endl;
+		else if (dynamic_cast<C *>(&p))
+			std::cout << "Instance of C" << std::endl;
+		else
+			std::cout << "No Class Instance found" << std::endl;
 	}
 	catch (std::exception & e)
 	{

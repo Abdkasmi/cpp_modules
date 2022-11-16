@@ -28,7 +28,7 @@ Data::~Data()
 Data&	Data::operator=(const Data & rhs)
 {
 	std::cout << "Data overload operator= called" << std::endl;
-	*this = rhs;
+	this->_string = rhs._string;
 	return *this;
 }
 

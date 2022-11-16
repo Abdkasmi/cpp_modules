@@ -13,7 +13,7 @@ Scalar::Scalar(): _value("0"), _charValue('0'), _intValue(0), _floatValue(0.0f),
 Scalar::Scalar(std::string value): _value(value)
 {
 	this->_charValue = static_cast<char>(std::atoi(value.c_str()));
-	this->_intValue = std::atoi(value.c_str());
+	this->_intValue = static_cast<int>(std::atoi(value.c_str()));
 	this->_floatValue = static_cast<float>(std::atof(value.c_str()));
 	this->_doubleValue = static_cast<double>(std::atof(value.c_str()));
 	std::cout << "Scalar constructor called" << std::endl;
