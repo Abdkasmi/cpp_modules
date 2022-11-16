@@ -19,7 +19,7 @@ class Span {
 		~Span();
 
 		void			addNumber(unsigned int n);
-		int	shortestSpan(void) const;
+		int				shortestSpan(void) const;
 		unsigned int	longestSpan(void) const;
 
 		template <typename Iterator>

@@ -25,22 +25,22 @@ Span::~Span(void)
 void	Span::addNumber(unsigned int number)
 {
 	if (this->_vector.size() >= this->_n)
-		throw TooMuchNumberException();
+		throw Span::TooMuchNumberException();
 	this->_vector.push_back(number);
 }
 
 int	Span::shortestSpan(void) const
 {
 	if (this->_vector.size() <= 1)
-		throw NoDataException();
+		throw Span::NoDataException();
 	else
 	{
 		std::vector<int> v2 = this->_vector;
 		std::sort(v2.begin(), v2.end());
-		int tmp = v2.at(1) - v2.at(0);
+		int tmp = v2[1] - v2[0];
 		unsigned int size = v2.size();
 
-		for (unsigned int i = 1; i < size; i++)
+		for (unsigned int i = 1; i < size - 1; i++)
 		{
 			if (tmp > v2[i + 1] - v2[i])
 				tmp = v2[i + 1] - v2[i];
