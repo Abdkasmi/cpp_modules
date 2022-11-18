@@ -2,7 +2,7 @@ SRCS = main.cpp
 	
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = array
+NAME = table
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 

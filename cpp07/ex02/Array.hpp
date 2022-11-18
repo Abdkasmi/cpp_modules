@@ -22,6 +22,7 @@ class Array {
 		}
 		
 		Array(const Array& src): _array(new T[src._size]), _size(src._size) {
+			std::cout << "copy constructor called" <<std::endl;
 			for (unsigned int i = 0; i < _size; i++) {
 				this->_array[i] = src._array[i];
 			}
