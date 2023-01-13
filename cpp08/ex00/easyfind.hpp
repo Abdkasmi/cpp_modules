@@ -15,8 +15,8 @@ class NoOccurrenceException : public std::exception {
 template <typename T>
 typename T::iterator	easyfind(T container, int num) {
 	typename T::iterator iter = std::find(container.begin(), container.end(), num);
-	if (iter == container.end())
-		throw NoOccurrenceException();
-	else
+	if (iter != container.end())
 		return iter;
+	else
+		throw NoOccurrenceException();
 }

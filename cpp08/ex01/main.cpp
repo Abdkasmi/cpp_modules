@@ -25,25 +25,17 @@ int main()
 	}
 	std::cout << "\n ================ MY TEST ================" << std::endl;
 	{
-		Span span = Span(10000);
-		std::array<int, 10000> num;
-		long	random;
-		for (int i = 0; i < 9999; i++)
-		{
-			random = rand() % 1000000;
-			for (unsigned int i = 0; i < num.size(); i++)
-				if (random == num[i]) {
-					random = rand() % 1000000; 
-					i = 0;
-				}
-			num[i] = random;
-		}
+		Span span = Span(20);
+		std::vector<int> num(10, 20);
+		span.addNumber(50);
+
 		try
 		{
-		span.superAddNumber(num.begin(), num.end());
-		span.addNumber(-999782);
-		std::cout << span.shortestSpan() << std::endl;
-		std::cout << span.longestSpan() << std::endl;
+			span.superAddNumber(num.begin(), num.end());
+			std::cout << span.shortestSpan() << std::endl;
+			std::cout << span.longestSpan() << std::endl;
+			// for (int i = 0; i < 10; i++)
+			// 	std::cout << num[i] << std::endl;
 		}
 		catch (const std::exception& e)
 		{
